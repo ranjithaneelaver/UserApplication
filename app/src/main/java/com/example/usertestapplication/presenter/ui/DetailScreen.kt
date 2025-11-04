@@ -1,6 +1,9 @@
 package com.example.usertestapplication.presenter.ui
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -34,7 +37,7 @@ fun DetailScreen(userId: Int?, popBackStack: () -> Unit, popBackLoginStack: () -
 
     when (userDetailDataValue) {
         is UserResult.Loading -> {
-            Column(modifier = Modifier.fillMaxWidth()) {
+            Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
                 Column(
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
@@ -47,7 +50,7 @@ fun DetailScreen(userId: Int?, popBackStack: () -> Unit, popBackLoginStack: () -
         is UserResult.Success -> {
             val users = (userDetailDataValue as UserResult.Success)
 
-            Column(modifier = Modifier.fillMaxWidth()) {
+            Column(modifier =  Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
                 Column(
                     modifier = Modifier
                         .padding(10.dp)

@@ -1,7 +1,9 @@
 package com.example.usertestapplication.presenter.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -36,13 +38,13 @@ fun LoadData(navigateHome: (Users) -> Unit, viewModel: UserViewModel) {
     val userDataValue by viewModel._userData.collectAsState()
 
     LaunchedEffect(Unit) {
-        viewModel.getData()
+        viewModel.getDataOnce()
     }
 
 
     when (userDataValue) {
         is UserResult.Loading -> {
-            Column(modifier = Modifier.fillMaxWidth()) {
+            Column(modifier =  Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
                 Column(
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)

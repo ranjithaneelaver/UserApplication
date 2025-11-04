@@ -23,12 +23,9 @@ fun addUserScreen(navController: NavHostController, navGraphBuilder: NavGraphBui
    navGraphBuilder.composable(route = NavRoute.UserHome.path){
        UserScreen(
            navigateHome = { users ->
-               println(users)
                navController.navigate(
-                   // 2. Use the created route string as the destination
                    NavRoute.Detail.createRoute(users.id)
                )
-               // NavRoute.Detail.createRoute(users.id)
            }
        )
 
